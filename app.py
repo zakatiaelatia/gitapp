@@ -6,10 +6,14 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-# هادي اللي ناقصة ❗
+# API ديال products
 @app.route("/products")
 def products():
-    data = ["PC Gamer", "iPhone", "Keyboard"]
+    data = [
+        {"name": "PC Gamer", "url": "https://www.google.com"},
+        {"name": "iPhone", "url": "https://www.apple.com"},
+        {"name": "Keyboard", "url": "https://www.amazon.com"}
+    ]
     return jsonify(data)
 
 if __name__ == "__main__":
